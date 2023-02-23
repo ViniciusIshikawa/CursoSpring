@@ -33,4 +33,4 @@ build/
 .vscode/
 
 #Properties
-cursomc/src/main/resources/application.properties
+*.properties
