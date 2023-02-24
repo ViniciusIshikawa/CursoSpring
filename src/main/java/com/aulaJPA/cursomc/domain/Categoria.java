@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Categoria implements Serializable {
-	//teste
 	private static final long serialVersionUID = 1L; //facilitar o trasnporte pela rede ou em salvamento em disco
 	
 	@Id
