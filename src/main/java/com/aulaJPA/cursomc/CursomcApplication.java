@@ -34,6 +34,7 @@ import com.aulaJPA.cursomc.repositories.ProdutoRepository;
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner{
 	
+	/*
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	@Autowired
@@ -52,7 +53,7 @@ public class CursomcApplication implements CommandLineRunner{
 	private PagamentoRepository pagamentoRepository;
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
-	
+	*/
 	
 
 	public static void main(String[] args) {
@@ -62,6 +63,7 @@ public class CursomcApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
+		/*
 		Categoria cat1 = new Categoria(null, "Informática");
 		Categoria cat2 = new Categoria(null, "Escritório");
 		
@@ -133,6 +135,7 @@ public class CursomcApplication implements CommandLineRunner{
 		p3.getItens().addAll(Arrays.asList(ip2));
 		
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
+		*/
 	}
 
 }
