@@ -1,35 +1,8 @@
 package com.aulaJPA.cursomc;
 
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.aulaJPA.cursomc.domain.Categoria;
-import com.aulaJPA.cursomc.domain.Cidade;
-import com.aulaJPA.cursomc.domain.Cliente;
-import com.aulaJPA.cursomc.domain.Endereco;
-import com.aulaJPA.cursomc.domain.Estado;
-import com.aulaJPA.cursomc.domain.ItemPedido;
-import com.aulaJPA.cursomc.domain.Pagamento;
-import com.aulaJPA.cursomc.domain.PagamentoComBoleto;
-import com.aulaJPA.cursomc.domain.PagamentoComCartao;
-import com.aulaJPA.cursomc.domain.Pedido;
-import com.aulaJPA.cursomc.domain.Produto;
-import com.aulaJPA.cursomc.domain.enums.EstadoPagamento;
-import com.aulaJPA.cursomc.domain.enums.TipoCliente;
-import com.aulaJPA.cursomc.repositories.CategoriaRepository;
-import com.aulaJPA.cursomc.repositories.CidadeRepository;
-import com.aulaJPA.cursomc.repositories.ClienteRepository;
-import com.aulaJPA.cursomc.repositories.EnderecoRepository;
-import com.aulaJPA.cursomc.repositories.EstadoRepository;
-import com.aulaJPA.cursomc.repositories.ItemPedidoRepository;
-import com.aulaJPA.cursomc.repositories.PagamentoRepository;
-import com.aulaJPA.cursomc.repositories.PedidoRepository;
-import com.aulaJPA.cursomc.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner{
