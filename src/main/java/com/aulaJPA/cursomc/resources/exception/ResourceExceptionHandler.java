@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.aulaJPA.cursomc.services.exceptions.DataIntegrityException;
 import com.aulaJPA.cursomc.services.exceptions.ObjectNotFoundException;	
 
 @ControllerAdvice //classe auxiliar que vai interceptar as requisições
@@ -17,5 +18,12 @@ public class ResourceExceptionHandler {
 		
 		StandardError err = new StandardError(HttpStatus.NOT_FOUND.value(), e.getMessage(), System.currentTimeMillis());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+	}
+	
+	@ExceptionHandler(DataIntegrityException.class)//tratamento de erro personalizado
+	public ResponseEntity<StandardError> dataIntegrity(DataIntegrityException e, HttpServletRequest request) {
+		
+		StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(), System.currentTimeMillis());
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
 	}
 }
