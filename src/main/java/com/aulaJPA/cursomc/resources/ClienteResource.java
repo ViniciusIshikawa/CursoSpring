@@ -19,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.aulaJPA.cursomc.domain.Cliente;
 import com.aulaJPA.cursomc.dto.ClienteDTO;
+import com.aulaJPA.cursomc.dto.ClienteNewDTO;
 import com.aulaJPA.cursomc.services.ClienteService;
 
 @RestController
@@ -32,6 +33,16 @@ public class ClienteResource {
 	public ResponseEntity<?> find(@PathVariable Integer id) {
 		Cliente obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDTO objDto){
+		Cliente obj = service.fromDTO(objDto);
+		obj = service.insert(obj);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}").buildAndExpand(obj.getId()).toUri(); //Pega o URI da nova categoria
+	
+  	    return ResponseEntity.created(uri).build();
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
